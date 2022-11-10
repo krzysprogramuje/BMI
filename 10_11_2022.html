@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <script>
+        function oblicz(){
+            var masa =0;
+            var wzrost =0;
+            var bmi =0;
+            masa=Number(document.getElementById("masa").value);
+            wzrost=Number(document.getElementById("wzrost").value);
+            if(masa<=0 || wzrost<=0){
+                document.getElementById("bmi").innerHTML=("nie można wprowadzać wartości mniejszej bąc równej zero");
+            }else{
+                wzrost=wzrost/100;
+                wzrost=wzrost**2;
+                bmi=masa/wzrost;
+                bmi=Math.round(bmi*100)/100;
+                document.getElementById("bmi").innerHTML=(bmi);
+            }
+        }
+       </script>
+        <style>
+            #bmi{ 
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        Twoja waga(kg) <input type="number" id="masa">
+        Twój wzrost(cm) <input type="number" id="wzrost">
+        <button onclick="oblicz()">Przelicz</button>
+        <div id="bmi"></div>
+        <div></div>
+    </body>
+</html>
